@@ -1,0 +1,16 @@
+{
+  "experiences": [
+    {
+      "company": "Fordel Studio",
+      "role": "Software Development Engineer",
+      "period": "2024-04-01",
+      "link": "https://fordelstudios.com"
+    },
+    {
+      "company": "Bluestock - Fintech",
+      "role": "Backend Developer",
+      "period": "2024-01-01",
+      "link": "https://bluestock.in"
+    }
+  ]
+}
