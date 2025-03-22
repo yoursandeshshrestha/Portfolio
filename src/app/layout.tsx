@@ -7,23 +7,18 @@ import Footer from "@/components/footer";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.sandeshshrestha.tech"),
-  title: {
-    default: "Sandesh Shrestha - Software Development Engineer",
-    template: "%s | Sandesh Shrestha",
-  },
+  title: "Sandesh Shrestha - Software Development Engineer",
   description:
-    "Software Development Engineer specializing in full-stack development and team leadership. Expert in React, Node.js, and scalable system architecture.",
+    "Software Development Engineer at Fordel Studio, specializing in full-stack development and team leadership. Experienced in React, Node.js, and cloud technologies.",
   keywords: [
     "Software Development Engineer",
     "Full Stack Developer",
     "React Developer",
     "Node.js Developer",
-    "Team Lead",
-    "System Architecture",
     "TypeScript",
-    "Next.js",
-    "MongoDB",
-    "PostgreSQL",
+    "Cloud Architecture",
+    "Team Leadership",
+    "Web Development",
   ],
   creator: "Sandesh Shrestha",
   publisher: "Sandesh Shrestha",
@@ -39,16 +34,16 @@ export const metadata: Metadata = {
     apple: "/apple-touch-icon.png",
   },
   openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://www.sandeshshrestha.tech",
+    siteName: "Sandesh Shrestha",
     title: "Sandesh Shrestha - Software Development Engineer",
     description:
-      "Software Development Engineer leading a team of 10, specializing in scalable web applications and system architecture.",
-    url: "https://www.sandeshshrestha.tech",
-    siteName: "Sandesh Shrestha Portfolio",
-    locale: "en_US",
-    type: "website",
+      "Software Development Engineer at Fordel Studio, specializing in full-stack development and team leadership.",
     images: [
       {
-        url: "/og-image.png",
+        url: "https://www.sandeshshrestha.tech/og-image.png",
         width: 1200,
         height: 630,
         alt: "Sandesh Shrestha - Software Development Engineer",
@@ -57,15 +52,14 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    site: "@sandeshshrestha",
-    creator: "@sandeshshrestha",
     title: "Sandesh Shrestha - Software Development Engineer",
     description:
-      "Software Development Engineer specializing in scalable web applications and team leadership.",
-    images: ["/twitter-image.png"],
+      "Software Development Engineer at Fordel Studio, specializing in full-stack development and team leadership.",
+    images: ["https://www.sandeshshrestha.tech/og-image.png"],
+    creator: "@yoursandeshshrestha",
   },
   verification: {
-    google: "your-google-verification-code",
+    google: "your-google-site-verification",
   },
   alternates: {
     canonical: "https://www.sandeshshrestha.tech",
@@ -79,9 +73,6 @@ export const metadata: Metadata = {
     googleBot: {
       index: true,
       follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
     },
   },
 };
