@@ -6,46 +6,72 @@ import { Navbar } from "@/components/navbar";
 import Footer from "@/components/footer";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://sandeshshrestha.tech"),
-  icons: {
-    icon: "/favicon.png",
-  },
+  metadataBase: new URL("https://www.sandeshshrestha.tech"),
   title: {
-    default: "SDE - Sandesh Shrestha",
+    default: "Sandesh Shrestha - Software Development Engineer",
     template: "%s | Sandesh Shrestha",
   },
   description:
-    "Sandesh Shrestha, a Software Development Engineer based in India, specializes in building scalable web and backend systems, with expertise in React, Next.js, and backend technologies.",
+    "Software Development Engineer specializing in full-stack development and team leadership. Expert in React, Node.js, and scalable system architecture.",
+  keywords: [
+    "Software Development Engineer",
+    "Full Stack Developer",
+    "React Developer",
+    "Node.js Developer",
+    "Team Lead",
+    "System Architecture",
+    "TypeScript",
+    "Next.js",
+    "MongoDB",
+    "PostgreSQL",
+  ],
+  creator: "Sandesh Shrestha",
+  publisher: "Sandesh Shrestha",
+  authors: [{ name: "Sandesh Shrestha" }],
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  icons: {
+    icon: "/favicon.png",
+    shortcut: "/favicon.png",
+    apple: "/apple-touch-icon.png",
+  },
   openGraph: {
     title: "Sandesh Shrestha - Software Development Engineer",
     description:
-      "Explore the professional portfolio, projects, and writings of Sandesh Shrestha, an engineer passionate about performance, scalability, and clean code principles.",
+      "Software Development Engineer leading a team of 10, specializing in scalable web applications and system architecture.",
+    url: "https://www.sandeshshrestha.tech",
     siteName: "Sandesh Shrestha Portfolio",
     locale: "en_US",
     type: "website",
     images: [
       {
-        url: "/assets/og-image.png",
+        url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Sandesh Shrestha Portfolio",
+        alt: "Sandesh Shrestha - Software Development Engineer",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
     site: "@sandeshshrestha",
+    creator: "@sandeshshrestha",
     title: "Sandesh Shrestha - Software Development Engineer",
     description:
-      "Follow Sandesh Shrestha's journey in the software development world, where he shares insights on frontend and backend technologies.",
-    images: [
-      {
-        url: "/assets/og-image.jpeg",
-        width: 1200,
-        height: 630,
-        alt: "Sandesh Shrestha Portfolio",
-      },
-    ],
+      "Software Development Engineer specializing in scalable web applications and team leadership.",
+    images: ["/twitter-image.png"],
+  },
+  verification: {
+    google: "your-google-verification-code",
+  },
+  alternates: {
+    canonical: "https://www.sandeshshrestha.tech",
+    languages: {
+      "en-US": "https://www.sandeshshrestha.tech",
+    },
   },
   robots: {
     index: true,
@@ -58,12 +84,6 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-  alternates: {
-    canonical: "https://sandeshshrestha.tech",
-    languages: {
-      "en-US": "https://sandeshshrestha.tech/en",
-    },
-  },
 };
 
 export default function RootLayout({
@@ -72,7 +92,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={(GeistSans.variable, GeistMono.variable)}>
+    <html
+      lang="en"
+      className={`${GeistSans.variable} ${GeistMono.variable}`}
+      suppressHydrationWarning
+    >
       <body className="antialiased max-w-xl mt-8 mx-auto">
         <main className="flex-auto min-w-0 mt-6 flex flex-col px-2 md:px-0">
           <Navbar />
