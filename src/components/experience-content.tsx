@@ -2,6 +2,7 @@ import Link from "next/link";
 import experienceData from "@/data/experience.json";
 
 interface Experience {
+  id: number;
   company: string;
   role: string;
   period: string;
@@ -26,8 +27,8 @@ export function ExperienceContent({
 }: ExperienceContentProps) {
   return (
     <div>
-      {experiences.map((exp, index) => (
-        <div key={index} className="flex flex-col space-y-1 mb-4">
+      {experiences.map((exp) => (
+        <div key={exp.id} className="flex flex-col space-y-1 mb-4">
           <div className="w-full flex items-center space-x-2">
             <Link href={exp.link} className="hover:underline" target="_blank">
               <p className="text-neutral-900 dark:text-neutral-100 tracking-tight">
