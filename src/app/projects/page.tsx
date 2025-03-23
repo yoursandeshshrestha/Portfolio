@@ -42,6 +42,10 @@ const jsonLd = {
 export default function Projects() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <main className="max-w-2xl mx-auto mb-6">
         <div className="space-y-12">
           {projectsData.projects.map((project) => (

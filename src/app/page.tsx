@@ -50,6 +50,10 @@ const jsonLd = {
 export default function Home() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <div>
         <div className="flex flex-col gap-4 text-gray-400">
           <h1 className="text-base text-gray-600 dark:text-gray-300 mb-4">
