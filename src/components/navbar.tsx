@@ -13,6 +13,9 @@ const navItems = {
   "/open-source-contributions": {
     name: "open-source-contributions",
   },
+  "/pictures": {
+    name: "pictures",
+  },
 };
 
 export function Navbar() {
