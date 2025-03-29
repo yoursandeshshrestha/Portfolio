@@ -1,6 +1,11 @@
 import Image from "next/image";
 import { BentoGrid, BentoGridItem } from "@/components/ui/bento-grid";
 import pictureOne from "../../../public/images/picture-one.jpeg";
+import pictureTwo from "../../../public/images/picture-two.jpeg";
+import pictureThree from "../../../public/images/picture-three.jpeg";
+import pictureFour from "../../../public/images/picture-four.jpeg";
+import pictureFive from "../../../public/images/picture-five.jpeg";
+import pictureSix from "../../../public/images/picture-six.jpeg";
 
 export default function Pictures() {
   return (
@@ -14,7 +19,7 @@ export default function Pictures() {
               <div className="w-full h-full overflow-hidden">
                 <Image
                   src={item.image}
-                  alt={item.image.src}
+                  alt={item.alt}
                   width={800}
                   height={400}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover/bento:scale-105"
@@ -34,25 +39,31 @@ const items = [
   {
     image: pictureOne, // Replace with your actual image paths
     className: "md:col-span-2",
+    alt: "sandesh-shrestha",
   },
   {
-    image: pictureOne, // Replace with your actual image paths
+    image: pictureTwo, // Replace with your actual image paths
     className: "md:col-span-1",
+    alt: "sandesh-shrestha",
   },
   {
-    image: pictureOne, // Replace with your actual image paths
+    image: pictureThree, // Replace with your actual image paths
     className: "md:col-span-1",
+    alt: "sandesh-shrestha",
   },
   {
-    image: pictureOne, // Replace with your actual image paths
+    image: pictureFour, // Replace with your actual image paths
     className: "md:col-span-2",
+    alt: "sandesh-shrestha",
   },
   {
-    image: pictureOne, // Replace with your actual image paths
+    image: pictureFive, // Replace with your actual image paths
     className: "md:col-span-2",
+    alt: "sandesh-shrestha",
   },
   {
-    image: pictureOne, // Replace with your actual image paths
+    image: pictureSix, // Replace with your actual image paths
     className: "md:col-span-1",
+    alt: "sandesh-shrestha",
   },
 ];
