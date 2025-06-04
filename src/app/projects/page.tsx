@@ -56,13 +56,13 @@ export default function Projects() {
               aria-label={`View details about ${project.title}`}
             >
               <article className="space-y-2">
-                <h2 className="text-base font-normal text-white group-hover:underline decoration-white underline-offset-4">
+                <h2 className="text-base font-normal text-neutral-900 group-hover:underline decoration-neutral-900 underline-offset-4">
                   {project.title}
                 </h2>
-                <p className="text-base text-gray-400 leading-relaxed">
+                <p className="text-base text-neutral-700 leading-relaxed">
                   {project.description}
                 </p>
-                <div className="text-sm text-gray-500">
+                <div className="text-sm text-neutral-600">
                   {project.tech.map((tech, index) => (
                     <span key={tech} className="inline-block">
                       {index > 0 && <span className="mx-1.5">·</span>}
