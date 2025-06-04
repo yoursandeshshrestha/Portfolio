@@ -55,14 +55,14 @@ export default function Home() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <div>
-        <div className="flex flex-col gap-4 text-gray-400">
-          <h1 className="text-base text-gray-600 dark:text-gray-300 mb-4">
+        <div className="flex flex-col gap-4 text-neutral-700">
+          <h1 className="text-base text-neutral-900 mb-4">
             Sandesh Shrestha - Software Development Engineer
           </h1>
           <p>
             <Link
               href={"https://www.mapsofindia.com/"}
-              className="text-white hover:underline"
+              className="text-neutral-900 hover:underline"
               target="_blank"
             >
               Based in India,
@@ -71,7 +71,7 @@ export default function Home() {
             leading frontend development at{" "}
             <Link
               href={"https://fordelstudios.com"}
-              className="text-white hover:underline"
+              className="text-neutral-900 hover:underline"
               target="_blank"
             >
               Fordel Studio
