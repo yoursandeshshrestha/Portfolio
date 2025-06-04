@@ -4,8 +4,8 @@
   "description": "Software Development Engineer specializing in full-stack development and team leadership.",
   "start_url": "https://www.sandeshshrestha.tech",
   "display": "standalone",
-  "background_color": "#ffffff",
-  "theme_color": "#000000",
+  "background_color": "#f5f1eb",
+  "theme_color": "#f5f1eb",
   "icons": [
     {
       "src": "/icon-192x192.png",
