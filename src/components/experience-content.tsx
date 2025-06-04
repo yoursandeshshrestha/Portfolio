@@ -31,12 +31,12 @@ export function ExperienceContent({
         <div key={exp.id} className="flex flex-col space-y-1 mb-4">
           <div className="w-full flex items-center space-x-2">
             <Link href={exp.link} className="hover:underline" target="_blank">
-              <p className="text-neutral-900 dark:text-neutral-100 tracking-tight">
+              <p className="text-neutral-900 tracking-tight">
                 {exp.role} at {exp.company}
               </p>
             </Link>
 
-            <p className="text-neutral-600 text-nowrap dark:text-neutral-400 tabular-nums">
+            <p className="text-neutral-700 text-nowrap tabular-nums">
               {formatDate(exp.period)}
             </p>
           </div>
