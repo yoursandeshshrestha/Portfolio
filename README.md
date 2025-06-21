@@ -1,36 +1,66 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Sandesh Shrestha
 
-## Getting Started
+Software Development Engineer with expertise in full-stack development and team leadership. Currently leading a team of 10 engineers at Fordel Studio, architecting and implementing scalable solutions with a focus on clean code principles and system design.
 
-First, run the development server:
+## Professional Experience
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+**Software Development Engineer** | [Fordel Studio](https://fordelstudios.com)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- Leading a team of 10 engineers in delivering enterprise solutions
+- Establishing development workflows and best practices
+- Reducing technical debt through thoughtful system design
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+**Backend Developer** | [Bluestock - Fintech](https://bluestock.in)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- Contributed to IPO development with a team of 6+ developers
+- Delivered high-quality fintech solution within 3 months
 
-## Learn More
+## Notable Projects
 
-To learn more about Next.js, take a look at the following resources:
+**[CodeLoom](https://codeloom.sandeshshrestha.tech)**
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- GitHub repository structure extraction tool for AI context sharing
+- Visualizes folder and file structures from public/private repositories
+- 500+ visits achieved
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+**[Soluna](https://soluna.sandeshshrestha.tech)**
 
-## Deploy on Vercel
+- Technical interview platform with live coding capabilities
+- Multi-language support with integrated coding panel and question banks
+- Enhanced interview experience for hiring teams and candidates
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Technical Stack
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **Core**: TypeScript, JavaScript, Node.js
+- **Frontend**: React, Next.js, Redux, Tailwind CSS, Material-UI, GSAP
+- **Backend**: NestJS, Express, GraphQL, MongoDB, PostgreSQL
+- **DevOps**: Docker, Git, GitHub Actions
+- **Tools**: Postman, Insomnia, Jira, WebSocket, JWT
+
+## Technical Writing & Open Source
+
+### Blog Posts
+
+- [CAP Theorem: SQL Databases and MongoDB](https://sandeshblog.hashnode.dev/cap-theorem-to-sql-databases-and-mongodb-1)
+- [Bad API Fetch vs Good API Fetch in JavaScript](https://sandeshblog.hashnode.dev/bad-api-fetch-vs-good-api-fetch-in-javascript)
+- [Next.js vs React.js: When to Use Each Framework](https://sandeshblog.hashnode.dev/nextjs-vs-reactjs-when-to-use-each-framework)
+
+### Open Source
+
+- Enhanced Bluekites UI and performance
+- Created `npx basic-next-app` for minimal Next.js setup
+
+## Development Philosophy
+
+"My main focus is on writing clean, maintainable code, using simplicity to achieve functionality, avoiding over-engineering, and reducing technical debt for long-term efficiency and scalability."
+
+## Contact
+
+- Website: [sandeshshrestha.tech](https://sandeshshrestha.tech)
+- LinkedIn: [sandeshshresthadev](https://www.linkedin.com/in/sandeshshresthadev)
+- GitHub: [yoursandeshshrestha](https://github.com/yoursandeshshrestha)
+- Email: [yoursandeshshrestha@gmail.com](mailto:yoursandeshshrestha@gmail.com)
+
+---
+
+_Available for technical consultations and collaborative projects in full-stack development and system architecture._

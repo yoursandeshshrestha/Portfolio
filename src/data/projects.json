@@ -1,0 +1,95 @@
+{
+  "projects": [
+    {
+      "id": "bluekites",
+      "title": "Bluekites LMS Platform",
+      "description": "Rescued and optimized a failing Learning Management System (LMS) that was left broken by a previous developer, fixing over 1000+ errors, improving performance, and ensuring security, scalability, and client satisfaction.",
+      "longDescription": "This project started as a rescue mission. The client was left with a completely broken Learning Management System (LMS) by their previous developer—over 1000+ errors across frontend and backend, sluggish performance, poor security, and no proper architecture.",
+      "tech": ["TypeScript", "React", "Node.js", "MongoDB", "Redux", "Redis"],
+      "github": "https://github.com/yoursandeshshrestha/Bluekites",
+      "live": "https://bluekites.org",
+      "challenges": [
+        "Salvaging a Broken Codebase",
+        "Debugging 1000+ Critical Errors",
+        "Strengthening Security & Authentication",
+        "Frontend Performance & State Management Fixes",
+        "Backend Optimization & Database Scaling",
+        "Client Coordination & Project Recovery"
+      ],
+      "solutions": [
+        "Restructured the entire codebase, implemented reusable components, and optimized performance",
+        "Systematic debugging and refactoring eliminated the major issues",
+        "Implemented JWT-based authentication, integrated an optimized verification system",
+        "Introduced Redux, optimized rendering, and restructured components",
+        "Optimized database indexing, refactored API logic, and integrated Redis caching",
+        "Regular communication, progress reports, and transparent problem-solving"
+      ],
+      "features": [
+        "Fully Optimized LMS with clean architecture",
+        "Improved security and performance",
+        "Scalable system architecture",
+        "Real-time updates and notifications",
+        "Comprehensive user management",
+        "Advanced course management system"
+      ]
+    },
+    {
+      "id": "techtornado",
+      "title": "TechTornadoV2",
+      "description": "A real-time game platform with a WebSocket backend, Next.js admin panel, and VPS-hosted deployment. Built under extreme time constraints.",
+      "longDescription": "TechTornadoV2 was not just another project—it was a high-pressure challenge that pushed both technical and leadership boundaries. What started as a simple database request from a faculty member and a group of juniors quickly evolved into a full-fledged real-time game platform.",
+      "tech": ["TypeScript", "Next.js", "WebSocket", "Node.js", "Hostinger"],
+      "github": "https://github.com/yoursandeshshrestha/TechTornadoV2",
+      "live": "https://techtornado.sbs",
+      "challenges": [
+        "Real-Time Backend with Socket Integration",
+        "Incomplete & Inefficient Frontend",
+        "Hosting & Deployment",
+        "Extreme Time Constraints"
+      ],
+      "solutions": [
+        "Implemented a WebSocket-based backend using Node.js to handle live game state updates",
+        "Rebuilt the frontend from scratch with modern UI and efficient API consumption",
+        "Secured custom domain and set up VPS hosting with reverse proxy configuration",
+        "Worked nights and coordinated efficiently with the team to meet deadlines"
+      ],
+      "features": [
+        "Real-time game state management",
+        "Admin dashboard for question management",
+        "Leaderboard tracking",
+        "Responsive and intuitive UI",
+        "Scalable WebSocket architecture",
+        "Secure authentication system"
+      ]
+    },
+    {
+      "id": "codeloom",
+      "title": "CodeLoom",
+      "description": "A GitHub repository structure extraction tool that allows users to fetch complete folder and file structures from public and private GitHub repositories as well as ZIP Folder.",
+      "longDescription": "CodeLoom is a GitHub repository structure extraction tool that simplifies the process of understanding and sharing repository structures. It's designed to help developers, especially those working with AI tools, to better understand and communicate their codebase structure.",
+      "tech": ["TypeScript", "Next.js", "GitHub API", "Tailwind CSS"],
+      "github": "https://github.com/yoursandeshshrestha/CodeLoom",
+      "live": "https://codeloom.sandeshshrestha.tech",
+      "challenges": [
+        "GitHub API Integration",
+        "Private Repository Access",
+        "ZIP File Processing",
+        "User Experience Design"
+      ],
+      "solutions": [
+        "Implemented robust GitHub API integration with proper error handling",
+        "Developed secure authentication flow for private repositories",
+        "Created efficient ZIP file processing system",
+        "Designed intuitive UI with clear feedback and progress indicators"
+      ],
+      "features": [
+        "Public and private repository support",
+        "ZIP file structure extraction",
+        "Copyable repository structure output",
+        "Real-time processing",
+        "Responsive design",
+        "Error handling and validation"
+      ]
+    }
+  ]
+}
