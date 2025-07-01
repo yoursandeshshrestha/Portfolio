@@ -5,9 +5,10 @@ import { motion, AnimatePresence } from "framer-motion";
 
 interface SplashScreenProps {
   onComplete: () => void;
+  customText?: string;
 }
 
-export function SplashScreen({ onComplete }: SplashScreenProps) {
+export function SplashScreen({ onComplete, customText }: SplashScreenProps) {
   const [isVisible, setIsVisible] = useState(true);
   const [startAnimation, setStartAnimation] = useState(false);
   const [currentGreetingIndex, setCurrentGreetingIndex] = useState(0);
@@ -45,29 +46,41 @@ export function SplashScreen({ onComplete }: SplashScreenProps) {
   }, []);
 
   useEffect(() => {
-    // Cycle through greetings
-    const greetingTimer = setInterval(() => {
-      setCurrentGreetingIndex((prev) => (prev + 1) % greetings.length);
-    }, 300); // Show each greeting for 300ms (much faster)
+    if (customText) {
+      // If custom text is provided, show it for 1.5 seconds then start animation
+      const animationTimer = setTimeout(() => {
+        setStartAnimation(true);
+        onComplete();
+        setTimeout(() => {
+          setIsVisible(false);
+        }, 750);
+      }, 1500);
 
-    // Start the animation after showing all greetings
-    const animationTimer = setTimeout(() => {
-      clearInterval(greetingTimer);
-      setStartAnimation(true);
-      // Call onComplete immediately when animation starts
-      onComplete();
-      // Hide splash screen after animation completes
-      setTimeout(() => {
-        setIsVisible(false);
-      }, 750); // Match the animation duration exactly
-    }, 1500); // Show greetings for 1.5 seconds total (much faster)
+      return () => {
+        clearTimeout(animationTimer);
+      };
+    } else {
+      // Original rotating greetings logic
+      const greetingTimer = setInterval(() => {
+        setCurrentGreetingIndex((prev) => (prev + 1) % greetings.length);
+      }, 300);
 
-    return () => {
-      clearInterval(greetingTimer);
-      clearTimeout(animationTimer);
-    };
+      const animationTimer = setTimeout(() => {
+        clearInterval(greetingTimer);
+        setStartAnimation(true);
+        onComplete();
+        setTimeout(() => {
+          setIsVisible(false);
+        }, 750);
+      }, 1500);
+
+      return () => {
+        clearInterval(greetingTimer);
+        clearTimeout(animationTimer);
+      };
+    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []); // Add missing dependencies
+  }, [customText]);
 
   const SVG = ({ height, width }: { height: number; width: number }) => {
     const initialPath = `
@@ -155,7 +168,7 @@ export function SplashScreen({ onComplete }: SplashScreenProps) {
           >
             <div className="text-center">
               <div className="text-4xl font-normal text-white">
-                • {greetings[currentGreetingIndex]}
+                • {customText || greetings[currentGreetingIndex]}
               </div>
             </div>
           </motion.div>
