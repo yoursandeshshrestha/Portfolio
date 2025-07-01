@@ -45,7 +45,18 @@ export const Header = () => {
         variants={itemVariants}
         className="text-[hsl(var(--muted-foreground))] leading-relaxed mb-4"
       >
-        Developer building the future. Currently Software Engineer @Fordel
+        Developer building the future. Currently Software Engineer{" "}
+        <span className="text-gray-800">@Fordel</span>
+        <br />
+        and running{" "}
+        <a
+          href="https://workwith.sandeshshrestha.tech"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-gray-800"
+        >
+          @workwith.sandeshshrestha
+        </a>
       </motion.p>
     </motion.div>
   );
