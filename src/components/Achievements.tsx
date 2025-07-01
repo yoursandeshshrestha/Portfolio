@@ -48,9 +48,9 @@ export const Achievements = () => {
         <motion.div
           key={index}
           variants={itemVariants}
-          whileHover={{ scale: 1.02 }}
+          whileHover={achievement.link ? { scale: 1.02 } : {}}
           transition={{ duration: 0.2, ease: "easeInOut" }}
-          className="cursor-pointer"
+          className={achievement.link ? "cursor-pointer" : ""}
         >
           {achievement.link ? (
             <Link
@@ -60,7 +60,7 @@ export const Achievements = () => {
               • {achievement.text}
             </Link>
           ) : (
-            <div className="text-[hsl(var(--muted-foreground))] hover:text-black text-base leading-relaxed transition-colors">
+            <div className="text-[hsl(var(--muted-foreground))] text-base leading-relaxed">
               • {achievement.text}
             </div>
           )}
