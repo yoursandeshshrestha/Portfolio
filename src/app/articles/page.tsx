@@ -1,11 +1,11 @@
 "use client";
 
 import React from "react";
-import { projects } from "@/src/data/projects";
-import ProjectCard from "@/src/components/ProjectCard";
+import { articles } from "@/src/data/articles";
+import ArticleCard from "@/src/components/ArticleCard";
 import { StaggeredContainer } from "@/src/animation/StaggeredContainer";
 
-function Projects() {
+function Articles() {
   return (
     <>
       <StaggeredContainer
@@ -15,7 +15,7 @@ function Projects() {
         staggerDelay={0.15}
       >
         <h1 className="text-2xl sm:text-3xl lg:text-[39px] text-[hsl(var(--foreground))] font-medium mb-4 sm:mb-6">
-          Projects
+          Articles
         </h1>
       </StaggeredContainer>
 
@@ -26,12 +26,12 @@ function Projects() {
         staggerDelay={0.15}
         className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8"
       >
-        {projects.map((project, index) => (
-          <ProjectCard key={index} project={project} index={index} />
+        {articles.map((article, index) => (
+          <ArticleCard key={index} article={article} index={index} />
         ))}
       </StaggeredContainer>
     </>
   );
 }
 
-export default Projects;
+export default Articles;
