@@ -1,11 +1,27 @@
 export const projects = [
   {
+    image: "/project/images/devops/devops.png",
+    date: "Jan 2025 – Present",
+    title: "Multi-Environment DevOps Automation",
+    difficulty: "Beginner",
+    slug: "devops-project",
+    tags: ["devops", "backend"],
+    stack:
+      "Docker, GitHub Actions, PM2, NGINX, Node.js, Bash, Linux (Ubuntu), DigitalOcean VPS, SSL/TLS, SSH",
+    link: {
+      sourcecode: "https://github.com/yourusername/devops-starter-template",
+    },
+    description:
+      "A practical DevOps project demonstrating multi-environment containerization, automated CI/CD pipelines, and production-grade deployment automation. Features include Docker containerization across dev/staging/prod environments, GitHub Actions workflows with SSH deployment, NGINX reverse proxy configuration with domain mapping, PM2 process management with clustering, and automated deployment scripts. Built with real-world DevOps practices and tools.",
+  },
+  {
     image: "/project/images/formula/main.png",
     video: "/project/video/formula-video.mp4",
     date: "Oct 2024 – Present",
     title: "Formula",
     difficulty: "Advanced",
     slug: "formula",
+    tags: ["frontend", "backend"],
     stack:
       "Next.js, React, TailwindCSS, Shiprocket, Razorpay, Custom Magento, Deployment - CI/CD",
     link: {
@@ -21,6 +37,7 @@ export const projects = [
     difficulty: "Intermediate",
     title: "Word Impact Network Backend",
     slug: "word-impact-network-backend",
+    tags: ["backend", "devops"],
     stack:
       "Node.js, Express.js, TypeScript, Prisma ORM, PostgreSQL, Redis, Zod, Docker, Swagger, Socket.io, Cloudinary, Winston",
     link: {
@@ -30,133 +47,4 @@ export const projects = [
     description:
       "A production-grade Learning Management System (LMS) backend with 88+ API endpoints, featuring dual authentication (Admin/Student), course management, progress tracking, assessment systems, real-time analytics, and third-party integrations. Built with Node.js, Express.js, TypeScript, Prisma ORM (PostgreSQL), Redis, Zod, and Docker. Includes real-time messaging (Socket.io), file uploads (Cloudinary), robust logging (Winston), automated testing (Jest), and CI/CD-ready Docker workflows.",
   },
-
-  // {
-  //   image: "/project/images/wordimpactnetwork.png",
-  //   date: "May 25, 2024",
-  //   tag: "SCROLL",
-  //   title: "Word Impact Network",
-  //   slug: "word-impact-network",
-  //   stack: "Next.js, React, Framer Motion",
-  //   link: {
-  //     demo: "https://wordimpactnetwork.org",
-  //     sourcecode: "https://github.com/wordimpactnetwork/wordimpactnetwork",
-  //   },
-  //   description:
-  //     "A website animation featuring a background image moving on scroll in a parallax motion, made with Framer Motion and React, inside a Next.js app. Inspired by: https://inkfishnyc.com/. Pictures by Matthias Leidinger",
-  // },
-  // {
-  //   image: "/project/images/formula.png",
-  //   date: "June 3, 2024",
-  //   tag: "SCROLL",
-  //   title: "We care packages",
-  //   slug: "we-care-packages",
-  //   stack: "React, Express, PostgreSQL",
-  //   link: {
-  //     demo: "https://sparto.com",
-  //     sourcecode: "https://github.com/wordimpactnetwork/wordimpactnetwork",
-  //   },
-  //   description:
-  //     "A website animation featuring a background image moving on scroll in a parallax motion, made with Framer Motion and React, inside a Next.js app. Inspired by: https://inkfishnyc.com/. Pictures by Matthias Leidinger",
-  // },
-  // {
-  //   image: "/project/images/formula.png",
-  //   date: "June 3, 2024",
-  //   tag: "SCROLL",
-  //   title: "Bluekites",
-  //   slug: "bluekites",
-  //   stack: "Next.js, React, Framer Motion",
-  //   link: {
-  //     demo: "https://bluekit.com",
-  //     sourcecode: "https://github.com/wordimpactnetwork/wordimpactnetwork",
-  //   },
-  //   description:
-  //     "A website animation featuring a background image moving on scroll in a parallax motion, made with Framer Motion and React, inside a Next.js app. Inspired by: https://inkfishnyc.com/. Pictures by Matthias Leidinger",
-  // },
-  // {
-  //   image: "/project/images/formula.png",
-  //   date: "June 3, 2024",
-  //   tag: "SCROLL",
-  //   title: "Sparto Admin",
-  //   slug: "sparto-admin",
-  //   stack: "React, Node.js, MongoDB",
-  //   link: {
-  //     demo: "https://sparto.com",
-  //     sourcecode: "https://github.com/wordimpactnetwork/wordimpactnetwork",
-  //   },
-  //   description:
-  //     "A website animation featuring a background image moving on scroll in a parallax motion, made with Framer Motion and React, inside a Next.js app. Inspired by: https://inkfishnyc.com/. Pictures by Matthias Leidinger",
-  // },
-
-  // {
-  //   image: "/project/images/formula.png",
-  //   date: "June 3, 2024",
-  //   tag: "SCROLL",
-  //   title: "Verdiam - Landing Page",
-  //   slug: "verdiam-landing-page",
-  //   stack: "Next.js, Tailwind CSS, Framer Motion",
-  //   link: {
-  //     demo: "https://sparto.com",
-  //     sourcecode: "https://github.com/wordimpactnetwork/wordimpactnetwork",
-  //   },
-  //   description:
-  //     "A website animation featuring a background image moving on scroll in a parallax motion, made with Framer Motion and React, inside a Next.js app. Inspired by: https://inkfishnyc.com/. Pictures by Matthias Leidinger",
-  // },
-  // {
-  //   image: "/project/images/formula.png",
-  //   date: "June 3, 2024",
-  //   tag: "SCROLL",
-  //   title: "Swastic - Landing Page",
-  //   slug: "swastic-landing-page",
-  //   stack: "React, Tailwind CSS, Framer Motion",
-  //   link: {
-  //     demo: "https://sparto.com",
-  //     sourcecode: "https://github.com/wordimpactnetwork/wordimpactnetwork",
-  //   },
-  //   description:
-  //     "A website animation featuring a background image moving on scroll in a parallax motion, made with Framer Motion and React, inside a Next.js app. Inspired by: https://inkfishnyc.com/. Pictures by Matthias Leidinger",
-  // },
-  // {
-  //   image: "/project/images/wordimpactnetwork.png",
-  //   date: "Dec 2024 – Present",
-  //   title: "Word Impact Network Backend",
-  //   slug: "word-impact-network-backend",
-  //   stack:
-  //     "Node.js, Express.js, MongoDB, JWT Authentication, Vimeo API, Email Services",
-  //   link: {
-  //     demo: "https://wordimpactnetwork.org",
-  //     sourcecode:
-  //       "https://github.com/wordimpactnetwork/wordimpactnetwork-backend",
-  //   },
-  //   description:
-  //     "A comprehensive Learning Management System (LMS) backend with 88 API endpoints, featuring dual authentication (Admin/Student), course management, progress tracking, assessment systems, real-time analytics, and third-party integrations. Built with Node.js, Express.js, MongoDB, and JWT authentication. Includes Vimeo video integration, email services, and comprehensive role-based access control.",
-  // },
-  // {
-  //   image: "/project/images/formula.png",
-  //   date: "June 3, 2024",
-  //   tag: "SCROLL",
-  //   title: "Sparto - Backend",
-  //   slug: "sparto-backend",
-  //   stack: "Node.js, Express, PostgreSQL",
-  //   link: {
-  //     demo: "https://sparto.com",
-  //     sourcecode: "https://github.com/wordimpactnetwork/wordimpactnetwork",
-  //   },
-  //   description:
-  //     "A website animation featuring a background image moving on scroll in a parallax motion, made with Framer Motion and React, inside a Next.js app. Inspired by: https://inkfishnyc.com/. Pictures by Matthias Leidinger",
-  // },
-  // {
-  //   image: "/project/images/formula.png",
-  //   date: "June 3, 2024",
-  //   tag: "SCROLL",
-  //   title: "Bluekites - Backend",
-  //   slug: "bluekites-backend",
-  //   stack: "Node.js, Express, MongoDB",
-  //   link: {
-  //     demo: "https://sparto.com",
-  //     sourcecode: "https://github.com/wordimpactnetwork/wordimpactnetwork",
-  //   },
-  //   description:
-  //     "A website animation featuring a background image moving on scroll in a parallax motion, made with Framer Motion and React, inside a Next.js app. Inspired by: https://inkfishnyc.com/. Pictures by Matthias Leidinger",
-  // },
 ];
