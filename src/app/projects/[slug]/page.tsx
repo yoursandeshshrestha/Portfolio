@@ -11,12 +11,14 @@ import { MDXProvider } from "@mdx-js/react";
 import { MDXComponents } from "@/src/components/MDXComponents";
 import FormulaCaseStudy from "@/src/mdx/formula/formula.mdx";
 import WordImpactNetworkBackendCaseStudy from "@/src/mdx/win/word-impact-network-backend.mdx";
+import DevOpsProjectCaseStudy from "@/src/mdx/devops/devops.mdx";
 import React from "react";
 import { StaggeredContainer } from "@/src/animation/StaggeredContainer";
 
 const projectCaseStudies: Record<string, React.ComponentType> = {
   formula: FormulaCaseStudy,
   "word-impact-network-backend": WordImpactNetworkBackendCaseStudy,
+  "devops-project": DevOpsProjectCaseStudy,
 };
 
 export default function ProjectDetailPage() {
