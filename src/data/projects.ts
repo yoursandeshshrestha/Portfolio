@@ -1,6 +1,6 @@
 export const projects = [
   {
-    image: "/project/images/devops/devops.png",
+    image: "/project/images/main/devops.png",
     date: "Jan 2025 – Present",
     title: "Multi-Environment DevOps Automation",
     difficulty: "Beginner",
@@ -15,7 +15,7 @@ export const projects = [
       "A practical DevOps project demonstrating multi-environment containerization, automated CI/CD pipelines, and production-grade deployment automation. Features include Docker containerization across dev/staging/prod environments, GitHub Actions workflows with SSH deployment, NGINX reverse proxy configuration with domain mapping, PM2 process management with clustering, and automated deployment scripts. Built with real-world DevOps practices and tools.",
   },
   {
-    image: "/project/images/formula/main.png",
+    image: "/project/images/main/formula.png",
     video: "/project/video/formula-video.mp4",
     date: "Oct 2024 – Present",
     title: "Formula",
@@ -32,7 +32,7 @@ export const projects = [
       "A full-scale, advanced e-commerce platform built as a direct competitor to Tira Beauty. Architected and developed end-to-end (frontend, backend, database, deployment) with 70,000+ lines of code. Features include real-time order tracking, personalized recommendations, routine builder, and seamless integrations with Shiprocket, Razorpay, and a custom Magento backend. Designed for scalability, maintainability, and a luxury-brand user experience.",
   },
   {
-    image: "/project/images/win/backend.png",
+    image: "/project/images/main/wordimpactnetwork.png",
     date: "April 2025 – Present",
     difficulty: "Intermediate",
     title: "Word Impact Network Backend",
