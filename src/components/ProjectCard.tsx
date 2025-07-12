@@ -3,13 +3,16 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import { truncateText } from "@/src/utils/textUtils";
+import React from "react";
 
 interface Project {
   image: string;
   video?: string;
   date: string;
   title: string;
+  difficulty: string;
   slug: string;
+  tags: string[];
   stack: string;
   link: string | { demo?: string; sourcecode?: string };
   description: string;
@@ -140,29 +143,46 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
       <motion.h3
         className="font-bold text-base sm:text-[18px] text-[#070B28] mb-1 hover:underline transition-all duration-300 cursor-pointer"
         onClick={() => window.open(projectPageUrl, "_self")}
+        title={project.title}
       >
-        {project.title}
+        {truncateText(project.title, 30)}
       </motion.h3>
+
+      {/* Tags */}
+      <div className="mb-2 flex flex-wrap gap-1.5 items-center">
+        {project.tags.map((tag, index) => (
+          <React.Fragment key={index}>
+            <span
+              className={`py-[2px] rounded-md text-[9px] sm:text-[10px] font-medium text-blue-500 uppercase`}
+            >
+              {tag}
+            </span>
+            {index < project.tags.length - 1 && (
+              <span className="text-gray-400 text-[8px]">|</span>
+            )}
+          </React.Fragment>
+        ))}
+      </div>
 
       {/* Stack below title */}
       <div className="mb-2 flex flex-wrap gap-1">
         {visibleStack.map((tech, index) => (
           <span
             key={index}
-            className="bg-gray-100 text-[#4F576C] px-2 py-1 rounded-xl text-[9px] sm:text-[10px] font-normal"
+            className="bg-gray-100 text-gray-600 px-2 py-0.5 rounded-md text-[8px] sm:text-[9px] font-normal tracking-wide uppercase"
           >
             {tech}
           </span>
         ))}
         {extraCount > 0 && (
-          <span className="bg-gray-200 text-[#4F576C] px-2 py-1 rounded-xl text-[9px] sm:text-[10px] font-normal">
+          <span className="bg-gray-100 text-gray-600 px-2 py-0.5 rounded-md text-[8px] sm:text-[9px] font-normal tracking-wide uppercase">
             +{extraCount} more
           </span>
         )}
       </div>
 
       <p className="text-[#4F576C] text-[11px] sm:text-[12px] text-normal mb-2 flex-1">
-        {truncateText(project.description)}
+        {truncateText(project.description, 100)}
       </p>
     </motion.div>
   );
