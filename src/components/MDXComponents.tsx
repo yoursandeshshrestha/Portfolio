@@ -1,6 +1,8 @@
 import React from "react";
 import Link from "next/link";
 import ERDSimulator from "./ERDSimulator";
+import DevOpsFlowchartSimulator from "./DevOpsFlowchartSimulator";
+import DeploymentScriptSimulator from "./DeploymentScriptSimulator";
 
 const containsEmoji = (text: string) => {
   const emojiRegex = /[👉✅🔓🧠💪❌]/;
@@ -9,6 +11,8 @@ const containsEmoji = (text: string) => {
 
 export const MDXComponents = {
   ERDSimulator,
+  DevOpsFlowchartSimulator,
+  DeploymentScriptSimulator,
   h1: ({ children, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
     <h1
       className="text-xl sm:text-2xl font-semibold text-left text-[hsl(var(--foreground))] mt-8 mb-4"
