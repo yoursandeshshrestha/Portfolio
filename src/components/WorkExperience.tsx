@@ -13,23 +13,15 @@ const Icon: React.FC<{
   className?: string;
 }> = ({ src, alt, className = "w-3.5 h-3.5" }) => {
   return (
-    <Image
-      src={src}
-      alt={alt}
-      width={14}
-      height={14}
-      className={className}
-    />
+    <Image src={src} alt={alt} width={14} height={14} className={className} />
   );
 };
-
 
 const WorkExperienceItem: React.FC<{
   experience: WorkExperienceType;
   index: number;
   showAll?: boolean;
-  isLast?: boolean;
-}> = ({ experience, index, showAll = false, isLast = false }) => {
+}> = ({ experience, index, showAll = false }) => {
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -199,7 +191,6 @@ const WorkExperience: React.FC<WorkExperienceProps> = ({
             experience={experience}
             index={index}
             showAll={showAll}
-            isLast={index === experiences.length - 1}
           />
         ))}
       </div>
