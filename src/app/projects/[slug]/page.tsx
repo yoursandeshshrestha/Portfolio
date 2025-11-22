@@ -4,7 +4,7 @@ import { useRouter } from "next/navigation";
 import { useParams } from "next/navigation";
 import { projects } from "@/src/data/projects";
 import { author } from "@/src/data/data";
-import { ArrowLeft, Circle } from "lucide-react";
+import { ArrowLeftIcon, CircleIcon, LockIcon } from "@/src/components/Icons";
 import ProjectLinkButton from "../../../components/ProjectLinkButton";
 import Image from "next/image";
 import { MDXProvider } from "@mdx-js/react";
@@ -45,7 +45,7 @@ export default function ProjectDetailPage() {
           className="flex items-center text-gray-500 hover:text-black mb-8 cursor-pointer"
           onClick={() => router.back()}
         >
-          <ArrowLeft className="w-5 h-5 mr-2" />
+          <ArrowLeftIcon className="w-5 h-5 mr-2" />
           <span className="text-base">Projects</span>
         </button>
 
@@ -63,23 +63,29 @@ export default function ProjectDetailPage() {
             <div className="text-gray-500 text-[12px] text-normal flex items-center gap-2">
               <span>{project.date}</span>
               <span className="mx-1">/</span>
-              <Circle className="w-2 h-2 text-red-800 mx-1" fill="red" />
+              <CircleIcon className="w-2 h-2 text-red-800 mx-1" fill="red" />
               <span>{project.difficulty}</span>
             </div>
           </div>
         </div>
 
         {/* Action buttons */}
-        <div className="flex gap-4 mb-8">
-          {project.link.demo && (
+        <div className="flex gap-4 mb-8 flex-wrap">
+          {typeof project.link === "object" && project.link.demo && (
             <ProjectLinkButton href={project.link.demo}>
               Live Demo
             </ProjectLinkButton>
           )}
-          {project.link.sourcecode && (
+          {typeof project.link === "object" && project.link.sourcecode && (
             <ProjectLinkButton href={project.link.sourcecode}>
               Source code
             </ProjectLinkButton>
+          )}
+          {typeof project.link === "object" && project.link.confidential && (
+            <div className="bg-gray-50 border border-gray-200 text-gray-600 px-4 py-2 rounded-xl text-sm flex items-center gap-2 font-medium">
+              <LockIcon className="w-4 h-4" size={16} />
+              <span>Codebase is confidential</span>
+            </div>
           )}
         </div>
       </StaggeredContainer>

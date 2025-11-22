@@ -4,7 +4,7 @@ import React from "react";
 import { useParams } from "next/navigation";
 import { articles } from "@/src/data/articles";
 import { StaggeredContainer } from "@/src/animation/StaggeredContainer";
-import { BookOpen, Clock, ArrowLeft } from "lucide-react";
+import { BookOpenIcon, ClockIcon, ArrowLeftIcon } from "@/src/components/Icons";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { MDXProvider } from "@mdx-js/react";
@@ -48,18 +48,18 @@ export default function ArticlePage() {
           href="/articles"
           className="inline-flex items-center gap-2 text-blue-500 hover:text-blue-600 transition-colors mb-6"
         >
-          <ArrowLeft size={16} />
+          <ArrowLeftIcon size={16} />
           Back to Articles
         </Link>
 
         <div className="mb-6">
           <div className="flex items-center gap-4 text-gray-500 text-sm mb-4">
             <div className="flex items-center gap-1">
-              <BookOpen size={14} />
+              <BookOpenIcon size={14} />
               {article.date}
             </div>
             <div className="flex items-center gap-1">
-              <Clock size={14} />
+              <ClockIcon size={14} />
               {article.readTime}
             </div>
             <span className="bg-gray-100 text-[#4F576C] px-3 py-1 rounded-xl text-xs font-normal">

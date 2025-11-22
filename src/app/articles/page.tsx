@@ -24,10 +24,10 @@ function Articles() {
         delay={0.3}
         direction="down"
         staggerDelay={0.15}
-        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8"
+        className="grid grid-cols-1 gap-6 sm:gap-8"
       >
         {articles.map((article, index) => (
-          <ArticleCard key={index} article={article} index={index} />
+          <ArticleCard key={index} article={article} index={index} isLast={index === articles.length - 1} />
         ))}
       </StaggeredContainer>
     </>
