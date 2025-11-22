@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import Image from "next/image";
-import { Menu, X } from "lucide-react";
+import { MenuIcon, XIcon } from "@/src/components/Icons";
 import blob from "@/public/blob/blob-4.png";
 
 interface HeaderProps {
@@ -31,9 +31,9 @@ export function Header({ isSidebarOpen, toggleSidebar }: HeaderProps) {
           aria-label={isSidebarOpen ? "Close menu" : "Open menu"}
         >
           {isSidebarOpen ? (
-            <X className="w-5 h-5 sm:w-6 sm:h-6 text-gray-700 hover:text-gray-500" />
+            <XIcon className="w-5 h-5 sm:w-6 sm:h-6 text-gray-700 hover:text-gray-500" />
           ) : (
-            <Menu className="w-5 h-5 sm:w-6 sm:h-6 text-gray-700 hover:text-gray-500" />
+            <MenuIcon className="w-5 h-5 sm:w-6 sm:h-6 text-gray-700 hover:text-gray-500" />
           )}
         </button>
       </div>

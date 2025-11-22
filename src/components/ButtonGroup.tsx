@@ -1,4 +1,4 @@
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRightIcon } from "@/src/components/Icons";
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 
@@ -36,7 +36,7 @@ const ButtonGroup: React.FC<ButtonGroupProps> = ({ buttons }) => {
             }}
             transition={{ duration: 0.2 }}
           >
-            <ArrowUpRight className="w-3 h-3 sm:w-4 sm:h-4" />
+            <ArrowUpRightIcon className="w-3 h-3 sm:w-4 sm:h-4" variant="black" />
           </motion.div>
         </motion.a>
       ))}

@@ -1,10 +1,11 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { useState } from "react";
-import sandesh from "@/public/personal/sandesh-two.png";
+import sandesh from "@/public/personal/sandesh-three.jpeg";
 import blob from "@/public/blob/blob-4.png";
 import { SocialLinks } from "@/src/components/SocialLinks";
 import { ImageModal } from "@/src/components/ImageModal";
+import { GitHubContributionGraph } from "@/src/components/GitHubContributionGraph";
 // import ButtonGroup from "@/src/components/ButtonGroup";
 
 const containerVariants = {
@@ -42,7 +43,7 @@ export const Hero = () => {
           alt="Sandesh Shrestha"
           width={200}
           height={200}
-          className="rounded-md w-16 h-16 cursor-pointer hover:scale-105 transition-transform"
+          className="rounded-md w-16 h-16 cursor-pointer hover:scale-105 transition-transform object-cover"
           onClick={() => setIsImageModalOpen(true)}
         />
         <SocialLinks />
@@ -57,7 +58,7 @@ export const Hero = () => {
 
       <motion.h1
         variants={itemVariants}
-        className="text-2xl sm:text-3xl lg:text-[39px] text-[hsl(var(--foreground))] font-medium mb-4 sm:mb-6 leading-tight"
+        className="text-2xl sm:text-3xl lg:text-[39px] text-[hsl(var(--foreground))] font-medium mb-4 sm:mb-6 leading-tight font-inter"
       >
         Welcome to my portfolio
         <Image
@@ -75,26 +76,28 @@ export const Hero = () => {
         className="text-[hsl(var(--muted-foreground))] leading-relaxed text-base sm:text-lg "
       >
         Cracked Developer who lives and breathes code 12 to 18 hours a day,
-        3000+ GitHub commits in 2025, and zero excuses. Currently Software
-        Developement Engineer{" "}
+        4000+ GitHub commits in 2025, and zero excuses. Currently AI Full Stack
+        Engineer at{" "}
         <a
-          href="https://fordelstudios.com"
+          // href="https://fordelstudios.com"
           target="_blank"
           rel="noopener noreferrer"
           className=" font-medium hover:text-[hsl(var(--primary))] transition-colors underline decoration-[hsl(var(--border))] hover:decoration-[hsl(var(--primary))] underline-offset-4"
         >
-          @Fordel
-        </a>{" "}
-        and running{" "}
-        <a
-          href="https://workwith.sandeshshrestha.tech"
-          target="_blank"
-          rel="noopener noreferrer"
-          className=" font-medium hover:text-[hsl(var(--primary))] transition-colors underline decoration-[hsl(var(--border))] hover:decoration-[hsl(var(--primary))] underline-offset-4"
-        >
-          @workwith.sandeshshrestha (my freelace company)
+          @StealthStartup
         </a>
+        {", "}and I do freelance too, plus heavily active on{" "}
+        <a
+          href="https://x.com/yoursandeshdev"
+          target="_blank"
+          rel="noopener noreferrer"
+          className=" font-medium hover:text-[hsl(var(--primary))] transition-colors underline decoration-[hsl(var(--border))] hover:decoration-[hsl(var(--primary))] underline-offset-4"
+        >
+          Twitter/X
+        </a>{" "}
+        sharing my progress and story.
       </motion.p>
+      <GitHubContributionGraph username="yoursandeshshrestha" />
       {/* <ButtonGroup
         buttons={[
           { label: "More about me", href: "/more-about-sandesh" },

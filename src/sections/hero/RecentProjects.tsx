@@ -18,7 +18,7 @@ export default function RecentProjects() {
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
         {projects.slice(0, 3).map((project, idx) => (
-          <ProjectCard key={idx} project={project} index={idx} />
+          <ProjectCard key={idx} project={project} index={idx} showTags={false} />
         ))}
       </div>
     </section>

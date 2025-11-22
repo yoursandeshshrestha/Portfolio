@@ -15,16 +15,45 @@ export interface WorkExperience {
 
 export const workExperience: WorkExperience[] = [
   {
+    id: "stealth-2024",
+    title: "AI Full Stack Engineer",
+    company: "",
+    period: "Oct 2024 - Present",
+    location: "Remote",
+    image: "/company/stealth.webp",
+    link: "#",
+    type: "full-time",
+    description:
+      "AI Full Stack Engineer, building innovative AI-powered solutions from the ground up. Responsible for end-to-end development of AI applications, including model integration, API development, and user interface design.",
+    technologies: [
+      "Python",
+      "TypeScript",
+      "React",
+      "Next.js",
+      "FastAPI",
+      "PostgreSQL",
+      "Docker",
+      "AWS",
+      "Machine Learning",
+      "AI/ML",
+      "langchain",
+      "Langgraph",
+      "Hugging Face",
+      "",
+    ],
+    achievements: [],
+  },
+  {
     id: "fordel-2024",
     title: "Software Development Engineer",
     company: "Fordel",
-    period: "Oct 2024 - Present",
+    period: "Oct 2024 - Oct 2025",
     location: "Onsite",
     image: "/company/fordel.jpg",
     link: "https://fordelstudios.com/",
     type: "full-time",
     description:
-      "Started as an intern and put in extreme effort to prove myself - coding 13-14 hours a day. After 3 months of exceptional performance, I was the only one promoted to Associate Developer. Then I got asked to lead a team building a complex project that was a direct competitor to Tira Beauty. I handled everything - client meetings, requirement analysis, scope preparation, project timeline, PR reviews, merges, and deployments. Due to my excellent performance, I got a salary increment too.",
+      "Started as an intern and put in extreme effort to prove myself - coding 13-14 hours a day. After 1 month of exceptional performance, I was the only one promoted to Associate Developer. Then I got asked to lead a team building a complex project that was a direct competitor to Tira Beauty. I handled everything - client meetings, requirement analysis, scope preparation, project timeline, PR reviews, merges, and deployments. Due to my excellent performance, I got a salary increment too.",
     technologies: [
       "Next.js",
       "React",
@@ -59,7 +88,7 @@ export const workExperience: WorkExperience[] = [
     ],
     achievements: [
       "Put in extreme effort as an intern - coding 13-14 hours daily to prove myself (still coding 10-18 hours a day)",
-      "Only one promoted to Associate Developer after 3 months due to exceptional performance",
+      "Only one promoted to Associate Developer after 1 month due to exceptional performance",
       "Led a complex project competing directly with Tira Beauty - handled everything from client meetings to deployments",
       "Managed requirement analysis, scope preparation, project timeline, PR reviews, merges, and deployments",
       "Got salary increment due to excellent performance and top talent recognition",
@@ -99,11 +128,13 @@ export const workExperience: WorkExperience[] = [
     link: "#",
     type: "freelance",
     description:
-      "I'm the guy clients call when they need a working product that actually works when they click their domain. I handle everything - frontend, backend, deployment, and everything in between. Because let's face it, clients don't care about your tech stack, they care about results. I've completed 6+ freelance projects so far, and every single client has been happy with the final result. Still collecting feedback words from clients - will be updated soon here.",
+      "I'm the guy clients call when they need a working product that actually works when they click their domain. I handle everything - frontend, backend, deployment, and everything in between. Because let's face it, clients don't care about your tech stack, they care about results. I've completed 8 freelance projects so far, and every single client has been happy with the final result. Still collecting feedback words from clients - will be updated soon here.",
     technologies: ["Frontend", "Backend", "Deployment", "Client Management"],
     achievements: [
       "Delivered working products on time and within budget (no excuses)",
       "All clients are very happy with the final result (still collecting feedback words from clients - will be updated soon here)",
+      "Handled end-to-end development from requirements to deployment for 8 projects",
+      "Managed client relationships, scope changes, and project timelines independently",
     ],
     process: [
       "Deep dive into client requirements, vision, and business goals",
@@ -127,5 +158,5 @@ export const experienceStats = {
   totalCompanyProjects: 4,
   totalCodingHours: 8000,
   CodingDate: "(From March 15th 2024 to Present)",
-  totalGitHubContributions: 3000,
+  totalGitHubContributions: 4000,
 };

@@ -57,7 +57,7 @@ export const SocialLinks = () => {
       imgAlt: "X/Twitter",
     },
     {
-      href: "/resume/sandesh-shrestha-resume.pdf",
+      href: "/resume/sandesh-shrestha-resume.pdf?v=2",
       label: "Resume",
       imgSrc: "/social/resume.png",
       imgAlt: "Resume",
