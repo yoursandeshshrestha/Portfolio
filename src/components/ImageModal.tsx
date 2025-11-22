@@ -1,6 +1,6 @@
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
-import { X } from "lucide-react";
+import { XIcon } from "@/src/components/Icons";
 import { createPortal } from "react-dom";
 import { useEffect, useState } from "react";
 
@@ -42,7 +42,7 @@ export const ImageModal = ({ isOpen, onClose, src, alt }: ImageModalProps) => {
               onClick={onClose}
               className="absolute -top-4 -right-4 z-10 p-2 bg-white/10 backdrop-blur-sm rounded-full hover:bg-white/20 transition-colors flex items-center justify-center cursor-pointer"
             >
-              <X className="w-5 h-5 text-white" />
+              <XIcon className="w-5 h-5 text-white" />
             </button>
             <Image
               src={src}

@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRightIcon } from "@/src/components/Icons";
 
 interface ProjectLinkButtonProps {
   href: string;
@@ -25,7 +25,7 @@ const ProjectLinkButton: React.FC<ProjectLinkButtonProps> = ({
       }`}
     >
       {children}
-      {!hideArrow && <ArrowUpRight className="w-4 h-4" />}
+      {!hideArrow && <ArrowUpRightIcon className="w-4 h-4" variant="black" />}
     </Link>
   );
 };
