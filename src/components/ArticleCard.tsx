@@ -1,8 +1,5 @@
-import Image from "next/image";
-import { useState } from "react";
 import { motion } from "framer-motion";
-import { BookOpen, ArrowUpRight, Clock } from "lucide-react";
-import { truncateText } from "@/src/utils/textUtils";
+import { BookIcon, TimeIcon, ArrowUpRightIcon } from "@/src/components/Icons";
 
 interface Article {
   image: string;
@@ -18,87 +15,57 @@ interface Article {
 interface ArticleCardProps {
   article: Article;
   index: number;
+  isLast?: boolean;
 }
 
-export default function ArticleCard({ article, index }: ArticleCardProps) {
-  const [hoveredArticle, setHoveredArticle] = useState<number | null>(null);
-
-  // Use slug from data for blog page URL
+export default function ArticleCard({ article, index, isLast = false }: ArticleCardProps) {
   const articlePageUrl = `/articles/${article.slug}`;
 
   return (
-    <motion.div className="flex flex-col h-full cursor-default">
-      <motion.div
-        className="overflow-hidden rounded-xl mb-3 sm:mb-4 aspect-[16/11] relative bg-gray-100 cursor-pointer"
-        whileHover={{ y: -8, scale: 1.02 }}
-        transition={{ duration: 0.3 }}
-        onMouseEnter={() => {
-          setHoveredArticle(index);
-        }}
-        onMouseLeave={() => {
-          setHoveredArticle(null);
-        }}
-        onClick={() => window.open(articlePageUrl, "_self")}
-      >
-        <Image
-          src={article.image}
-          alt={article.title}
-          width={600}
-          height={800}
-          className="object-cover w-full h-full"
-        />
+    <motion.div 
+      className={`group flex flex-col sm:flex-row gap-4 sm:gap-6 py-5 sm:py-6 transition-all duration-300 cursor-pointer ${!isLast ? 'border-b border-gray-200 hover:border-gray-300' : ''}`}
+      onClick={() => window.open(articlePageUrl, "_self")}
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.3, delay: index * 0.1 }}
+    >
+      {/* Left side - Meta info */}
+      <div className="flex flex-col gap-2 min-w-[140px] sm:min-w-[160px]">
+        <div className="flex flex-col gap-2 text-gray-500 text-[11px] sm:text-[12px]">
+          <div className="flex items-center gap-1.5">
+            <BookIcon size={12} className="sm:w-3.5 sm:h-3.5 flex-shrink-0" />
+            <span className="whitespace-nowrap">{article.date}</span>
+          </div>
+          <div className="flex items-center gap-1.5">
+            <TimeIcon size={12} className="sm:w-3.5 sm:h-3.5 flex-shrink-0" />
+            <span>{article.readTime}</span>
+          </div>
+        </div>
+        <div className="pt-2 border-t border-gray-100">
+          <span className="bg-blue-50 text-blue-600 px-2.5 py-1 rounded-md text-[9px] sm:text-[10px] font-medium uppercase tracking-wide">
+            {article.tag}
+          </span>
+        </div>
+      </div>
 
-        {/* Read Button */}
-        <motion.div
-          className="absolute bottom-3 right-3 sm:bottom-4 sm:right-4 cursor-pointer"
-          initial={{ opacity: 0, y: 10 }}
-          animate={{
-            opacity: hoveredArticle === index ? 1 : 0,
-            y: hoveredArticle === index ? 0 : 10,
-          }}
-          transition={{ duration: 0.2 }}
+      {/* Right side - Content */}
+      <div className="flex-1 flex flex-col">
+        <motion.h3
+          className="font-bold text-lg sm:text-xl text-[#070B28] mb-2 group-hover:text-blue-600 transition-colors duration-200 line-clamp-2 leading-tight"
+          title={article.title}
         >
-          <button
-            className="bg-blue-500/90 cursor-pointer backdrop-blur-sm text-white px-4 py-1 sm:py-1.5 sm:px-6 rounded-full flex items-center justify-center gap-1 sm:gap-2 hover:bg-blue-600 hover:scale-105 transition-all duration-200 shadow-lg"
-            onClick={(e) => {
-              e.stopPropagation();
-              window.open(articlePageUrl, "_self");
-            }}
-          >
-            <span className="text-xs sm:text-sm font-medium">Read</span>
-            <ArrowUpRight size={14} className="sm:w-4 sm:h-4" />
-          </button>
-        </motion.div>
-      </motion.div>
+          {article.title}
+        </motion.h3>
 
-      <div className="text-gray-500 text-[11px] sm:text-[12px] text-normal mb-1 flex items-center gap-2 sm:gap-3">
-        <div className="flex items-center gap-1">
-          <BookOpen size={11} className="sm:w-3 sm:h-3" />
-          {article.date}
-        </div>
-        <div className="flex items-center gap-1">
-          <Clock size={11} className="sm:w-3 sm:h-3" />
-          {article.readTime}
+        <p className="text-gray-600 text-[13px] sm:text-[14px] leading-relaxed mb-4 flex-1 line-clamp-2">
+          {article.description}
+        </p>
+
+        <div className="flex items-center gap-2 text-blue-600 text-xs sm:text-sm font-medium group-hover:gap-3 transition-all duration-200">
+          <span>Read article</span>
+          <ArrowUpRightIcon size={14} className="sm:w-4 sm:h-4" variant="black" />
         </div>
       </div>
-
-      <motion.h3
-        className="font-bold text-base sm:text-[18px] text-gray-900 mb-2 hover:underline transition-all duration-300 cursor-pointer"
-        onClick={() => window.open(articlePageUrl, "_self")}
-      >
-        {article.title}
-      </motion.h3>
-
-      {/* Tag below title */}
-      <div className="mb-2">
-        <span className="bg-gray-100 text-[#4F576C] px-2 py-1 rounded-xl text-[9px] sm:text-[10px] font-normal">
-          {article.tag}
-        </span>
-      </div>
-
-      <p className="text-gray-600 text-[11px] sm:text-[12px] text-normal mb-2 flex-1">
-        {truncateText(article.description)}
-      </p>
     </motion.div>
   );
 }

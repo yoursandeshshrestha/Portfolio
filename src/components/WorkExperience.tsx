@@ -6,110 +6,134 @@ import {
   WorkExperience as WorkExperienceType,
 } from "../data/experience";
 
+// Icon component for SVG icons
+const Icon: React.FC<{
+  src: string;
+  alt: string;
+  className?: string;
+}> = ({ src, alt, className = "w-3.5 h-3.5" }) => {
+  return (
+    <Image
+      src={src}
+      alt={alt}
+      width={14}
+      height={14}
+      className={className}
+    />
+  );
+};
+
+
 const WorkExperienceItem: React.FC<{
   experience: WorkExperienceType;
   index: number;
   showAll?: boolean;
-}> = ({ experience, index, showAll = false }) => {
+  isLast?: boolean;
+}> = ({ experience, index, showAll = false, isLast = false }) => {
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
-      className="flex items-start gap-3 sm:gap-4 py-4 sm:py-6 border-b border-gray-100 last:border-b-0"
+      className="flex items-start gap-4 sm:gap-6 pb-8 sm:pb-10 last:pb-0"
     >
-      <Image
-        src={experience.image}
-        alt={`${experience.company} logo`}
-        width={36}
-        height={36}
-        className="rounded-lg object-cover flex-shrink-0 sm:w-10 sm:h-10"
-      />
+      {/* Company logo */}
+      <div className="flex-shrink-0 pt-1">
+        <Image
+          src={experience.image}
+          alt={`${experience.company} logo`}
+          width={40}
+          height={40}
+          className="rounded-lg object-cover w-10 h-10 sm:w-12 sm:h-12"
+        />
+      </div>
 
       <div className="flex-1 min-w-0">
-        <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between mb-2 gap-1 sm:gap-0">
-          <div>
-            <h3 className="text-base sm:text-[18px] font-bold text-[#070B28] mb-1">
+        {/* Header */}
+        <div className="mb-3">
+          <div className="flex flex-wrap items-baseline gap-2 mb-1.5">
+            <h3 className="text-base sm:text-lg font-semibold text-[#070B28]">
               {experience.title}
             </h3>
-            <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2">
-              <div className="relative group">
+            {experience.company && (
+              <span className="text-[#4F576C] text-xs sm:text-sm">
+                at{" "}
                 <a
                   href={experience.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-500 font-medium hover:underline transition-colors text-sm"
+                  className="text-gray-600 hover:text-[#070B28] hover:underline transition-colors"
                 >
                   {experience.company}
                 </a>
-                {experience.id === "fordel-2024" && (
-                  <span className="absolute -top-10 left-0 bg-[#070B28] text-white text-xs px-3 py-2 rounded-lg opacity-0 group-hover:opacity-100 transition-all duration-300 whitespace-nowrap z-[9999] shadow-lg border border-gray-200">
-                    I designed and coded this website for Fordel btw
-                    <div className="absolute top-full left-4 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-[#070B28]"></div>
-                  </span>
-                )}
-              </div>
-              <span className="hidden sm:inline text-gray-400">•</span>
-              <span className="text-gray-600 text-sm">
-                {experience.location}
               </span>
-            </div>
+            )}
           </div>
-          <div className="text-left sm:text-right">
-            <div className="text-[11px] sm:text-[12px] text-[#4F576C]">
+          <div className="flex flex-wrap items-center gap-3 text-xs text-[#4F576C]">
+            <span className="flex items-center gap-1">
+              <Icon src="/icons/calendar.svg" alt="Calendar" />
               {experience.period}
-            </div>
+            </span>
+            <span className="flex items-center gap-1">
+              <Icon src="/icons/location.svg" alt="Location" />
+              {experience.location}
+            </span>
           </div>
         </div>
 
-        <p className="text-[#4F576C] text-[11px] sm:text-[12px] leading-relaxed mb-3">
+        {/* Description */}
+        <p className="text-[#4F576C] text-xs sm:text-sm leading-relaxed mb-4">
           {experience.description}
         </p>
 
-        <div className="flex flex-wrap gap-1 sm:gap-2 mb-4">
-          {experience.technologies
-            .slice(0, showAll ? undefined : 4)
-            .map((tech, techIndex) => (
-              <span
-                key={techIndex}
-                className="bg-gray-100 text-[#4F576C] px-2 py-1 rounded-xl text-[9px] sm:text-[10px] font-normal"
-              >
-                {tech}
-              </span>
-            ))}
-          {!showAll && experience.technologies.length > 4 && (
-            <span className="bg-gray-100 text-[#4F576C] px-2 py-1 rounded-xl text-[9px] sm:text-[10px] font-normal">
-              +{experience.technologies.length - 4} more
-            </span>
-          )}
-        </div>
+        {/* Technologies */}
+        {showAll && experience.technologies.length > 0 && (
+          <div className="mb-4">
+            <div className="flex flex-wrap gap-1.5">
+              {experience.technologies.map((tech, techIndex) => (
+                <span
+                  key={techIndex}
+                  className="text-[#4F576C] text-[10px] sm:text-xs"
+                >
+                  {tech}
+                  {techIndex < experience.technologies.length - 1 && (
+                    <span className="mx-1">•</span>
+                  )}
+                </span>
+              ))}
+            </div>
+          </div>
+        )}
 
-        <div className="space-y-2">
-          {experience.achievements
-            .slice(0, showAll ? undefined : 1)
-            .map((achievement, achievementIndex) => (
-              <div
-                key={achievementIndex}
-                className="flex items-start gap-2 text-[11px] sm:text-[12px] text-[#4F576C]"
+        {/* Achievements */}
+        {experience.achievements.length > 0 && (
+          <div className="space-y-1.5">
+            {experience.achievements
+              .slice(0, showAll ? undefined : 3)
+              .map((achievement, achievementIndex) => (
+                <div
+                  key={achievementIndex}
+                  className="text-[#4F576C] text-xs sm:text-sm"
+                >
+                  • {achievement}
+                </div>
+              ))}
+            {!showAll && experience.achievements.length > 3 && (
+              <a
+                href="/experience"
+                className="text-blue-500 text-xs sm:text-sm hover:text-blue-600 transition-colors inline-block"
               >
-                <span className="text-gray-500 flex-shrink-0 mt-0.5">•</span>
-                <span>{achievement}</span>
-              </div>
-            ))}
-          {!showAll && experience.achievements.length > 1 && (
-            <a
-              href="/experience"
-              className="text-blue-500 text-[11px] sm:text-[12px] font-medium hover:text-blue-600 transition-colors"
-            >
-              See more achievements →
-            </a>
-          )}
-        </div>
+                See {experience.achievements.length - 3} more →
+              </a>
+            )}
+          </div>
+        )}
 
+        {/* Process */}
         {experience.process && (
           <div className="mt-4">
-            <h4 className="text-[12px] sm:text-[13px] font-semibold text-[#070B28] mb-2">
-              My Process:
+            <h4 className="text-[10px] sm:text-[11px] font-semibold text-[#070B28] mb-2 uppercase tracking-wide">
+              My Process
             </h4>
             <div className="space-y-1">
               {experience.process
@@ -117,20 +141,17 @@ const WorkExperienceItem: React.FC<{
                 .map((step, stepIndex) => (
                   <div
                     key={stepIndex}
-                    className="flex items-start gap-2 text-[10px] sm:text-[11px] text-[#4F576C]"
+                    className="text-[#4F576C] text-xs sm:text-sm"
                   >
-                    <span className="text-blue-500 flex-shrink-0 mt-0.5 font-medium">
-                      {stepIndex + 1}.
-                    </span>
-                    <span>{step}</span>
+                    {stepIndex + 1}. {step}
                   </div>
                 ))}
               {!showAll && experience.process.length > 3 && (
                 <a
                   href="/experience"
-                  className="text-blue-500 text-[10px] sm:text-[11px] font-medium hover:text-blue-600 transition-colors"
+                  className="text-blue-500 text-xs sm:text-sm hover:text-blue-600 transition-colors inline-block"
                 >
-                  See full process →
+                  See full process ({experience.process.length} steps) →
                 </a>
               )}
             </div>
@@ -178,6 +199,7 @@ const WorkExperience: React.FC<WorkExperienceProps> = ({
             experience={experience}
             index={index}
             showAll={showAll}
+            isLast={index === experiences.length - 1}
           />
         ))}
       </div>
