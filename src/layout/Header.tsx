@@ -11,7 +11,7 @@ interface HeaderProps {
 
 export function Header({ isSidebarOpen, toggleSidebar }: HeaderProps) {
   return (
-    <nav className="fixed top-0 left-0 right-0 z-[71] bg-white/80 backdrop-blur-md border-b border-gray-200/50">
+    <nav className="fixed top-0 left-0 right-0 z-71 bg-white/80 backdrop-blur-md border-b border-gray-200/50">
       <div className="max-w-[1440px] mx-auto px-4 sm:px-6 py-3 sm:py-4 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center">
