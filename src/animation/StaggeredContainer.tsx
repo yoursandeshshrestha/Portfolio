@@ -73,7 +73,7 @@ export const StaggeredContainer: React.FC<StaggeredContainerProps> = ({
             x: 0,
             transition: {
               duration: 0.6,
-              ease: [0.25, 0.46, 0.45, 0.94],
+              ease: [0.25, 0.46, 0.45, 0.94] as const,
             },
           },
         };
@@ -100,7 +100,7 @@ export const StaggeredContainer: React.FC<StaggeredContainerProps> = ({
             y: 0,
             transition: {
               duration: 0.7,
-              ease: [0.175, 0.885, 0.32, 1.275],
+              ease: [0.175, 0.885, 0.32, 1.275] as const,
             },
           },
         };
@@ -121,7 +121,7 @@ export const StaggeredContainer: React.FC<StaggeredContainerProps> = ({
             x: 0,
             transition: {
               duration: 0.8,
-              ease: [0.68, -0.55, 0.265, 1.55],
+              ease: [0.68, -0.55, 0.265, 1.55] as const,
             },
           },
         };
@@ -150,8 +150,8 @@ export const StaggeredContainer: React.FC<StaggeredContainerProps> = ({
             scale: 1,
             transition: {
               duration: 0.9,
-              ease: [0.68, -0.55, 0.265, 1.55],
-              type: "spring",
+              ease: [0.68, -0.55, 0.265, 1.55] as const,
+              type: "spring" as const,
               stiffness: 100,
               damping: 12,
             },
@@ -184,8 +184,8 @@ export const StaggeredContainer: React.FC<StaggeredContainerProps> = ({
             rotate: 0,
             transition: {
               duration: 1.0,
-              ease: [0.175, 0.885, 0.32, 1.275],
-              type: "spring",
+              ease: [0.175, 0.885, 0.32, 1.275] as const,
+              type: "spring" as const,
               stiffness: 120,
               damping: 10,
             },
@@ -208,7 +208,7 @@ export const StaggeredContainer: React.FC<StaggeredContainerProps> = ({
             x: 0,
             transition: {
               duration: 0.8,
-              ease: [0.25, 0.46, 0.45, 0.94],
+              ease: [0.25, 0.46, 0.45, 0.94] as const,
             },
           },
         };
@@ -227,7 +227,7 @@ export const StaggeredContainer: React.FC<StaggeredContainerProps> = ({
             x: 0,
             transition: {
               duration: 0.7,
-              ease: [0.68, -0.55, 0.265, 1.55],
+              ease: [0.68, -0.55, 0.265, 1.55] as const,
             },
           },
         };
@@ -254,7 +254,7 @@ export const StaggeredContainer: React.FC<StaggeredContainerProps> = ({
             x: 0,
             transition: {
               duration: 0.6,
-              ease: [0.25, 0.46, 0.45, 0.94],
+              ease: [0.25, 0.46, 0.45, 0.94] as const,
             },
           },
         };
@@ -271,7 +271,7 @@ export const StaggeredContainer: React.FC<StaggeredContainerProps> = ({
             x: 0,
             transition: {
               duration: 0.5,
-              ease: [0.25, 0.46, 0.45, 0.94],
+              ease: [0.25, 0.46, 0.45, 0.94] as const,
             },
           },
         };
@@ -288,7 +288,7 @@ export const StaggeredContainer: React.FC<StaggeredContainerProps> = ({
             x: 0,
             transition: {
               duration: 0.6,
-              ease: [0.25, 0.46, 0.45, 0.94],
+              ease: [0.25, 0.46, 0.45, 0.94] as const,
             },
           },
         };
