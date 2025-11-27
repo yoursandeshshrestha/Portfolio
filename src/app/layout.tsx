@@ -1,10 +1,14 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Inter, Plus_Jakarta_Sans } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import { ClientLayout } from "@/src/layout/ClientLayout";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
-const plusJakartaSans = Plus_Jakarta_Sans({ subsets: ["latin"], variable: "--font-plus-jakarta" });
+const plusJakartaSans = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  variable: "--font-plus-jakarta",
+});
 
 export const metadata: Metadata = {
   title: "Sandesh Shrestha - Software Engineer",
@@ -19,8 +23,11 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} ${plusJakartaSans.variable} ${plusJakartaSans.className} bg-white`}>
+      <body
+        className={`${inter.variable} ${plusJakartaSans.variable} ${plusJakartaSans.className} bg-white`}
+      >
         <ClientLayout>{children}</ClientLayout>
+        <Analytics />
       </body>
     </html>
   );
