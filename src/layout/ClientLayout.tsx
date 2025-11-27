@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { Header } from "@/src/layout/Header";
 import Sidebar from "@/src/layout/Sidebar";
 import Footer from "./Footer";
+import { BackgroundMusic } from "@/src/components/BackgroundMusic";
 
 interface ClientLayoutProps {
   children: React.ReactNode;
@@ -43,6 +44,7 @@ export function ClientLayout({ children }: ClientLayoutProps) {
         </main>
       </div>
       <Footer />
+      <BackgroundMusic />
     </>
   );
 }

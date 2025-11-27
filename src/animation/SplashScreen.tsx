@@ -177,7 +177,7 @@ export function SplashScreen({
 
           {/* Greeting Text */}
           <motion.div
-            className="fixed inset-0 flex items-center justify-center z-[80]"
+            className="fixed inset-0 flex items-center justify-center z-80"
             style={{ zIndex: 80 }}
             initial={animationValues.textInitial}
             animate={
