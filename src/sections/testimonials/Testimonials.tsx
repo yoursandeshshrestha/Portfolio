@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Tweet } from "react-tweet";
 
 export default function Testimonials() {
@@ -19,20 +20,20 @@ export default function Testimonials() {
   return (
     <section className="mt-20 sm:mt-32 lg:mt-40">
       <div className="mb-6 sm:mb-8">
-        <h2 className="text-2xl sm:text-3xl lg:text-[30px] font-medium text-[#070B28]">
-          What people say about me
+        <h2 className="text-2xl sm:text-3xl lg:text-[30px] font-medium text-[#070B28] flex items-center gap-2">
+          Love from{" "}
+          <Image
+            width={24}
+            height={24}
+            src="/social/x.svg"
+            alt="X"
+            className="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6"
+          />
         </h2>
       </div>
-      <div className="flex flex-wrap gap-2 sm:gap-1">
-        {tweetIds.map((id, index) => (
-          <div
-            key={id}
-            className={`w-full md:w-[calc(50%-${
-              index === 0 ? "2px" : "4px"
-            })] lg:w-[calc(33.333%-${
-              index === 0 ? "1.5px" : "7px"
-            })] tweet-container`}
-          >
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-1">
+        {tweetIds.map((id) => (
+          <div key={id} className="tweet-container">
             <Tweet id={id} />
           </div>
         ))}
