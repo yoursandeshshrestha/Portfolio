@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import { Hero } from "@/src/sections/hero/Hero";
 import RecentProjects from "@/src/sections/hero/RecentProjects";
 import RecentArticles from "@/src/sections/hero/RecentArticles";
+import Testimonials from "@/src/sections/testimonials/Testimonials";
 import WorkExperience from "@/src/components/WorkExperience";
 
 export default function Home() {
@@ -22,6 +23,7 @@ export default function Home() {
       <WorkExperience />
       <RecentProjects />
       <RecentArticles />
+      <Testimonials />
     </div>
   );
 }
