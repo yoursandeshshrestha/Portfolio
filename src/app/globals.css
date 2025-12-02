@@ -148,3 +148,58 @@ html {
 .font-plus-jakarta {
   font-family: var(--font-plus-jakarta);
 }
+
+/* Compact Tweet Styling */
+.tweet-container {
+  height: 270px;
+  overflow: hidden;
+  background: white;
+  border-radius: 12px;
+}
+
+.tweet-container > div {
+  transform: scale(0.85);
+  transform-origin: top left;
+  width: 117.65%;
+  height: 117.65%;
+}
+
+.tweet-container [data-react-tweet] {
+  background: white !important;
+  border: none !important;
+  height: 100% !important;
+  border-radius: 12px !important;
+  color: #1f2937 !important;
+}
+
+.tweet-container [data-react-tweet] article {
+  padding: 8px !important;
+  background: white !important;
+  border: none !important;
+  border-radius: 12px !important;
+  color: #1f2937 !important;
+}
+
+.tweet-container [data-react-tweet] * {
+  color: #1f2937 !important;
+  background-color: white !important;
+}
+
+.tweet-container [data-react-tweet] a {
+  color: #3b82f6 !important;
+}
+
+.tweet-container [data-react-tweet] svg {
+  fill: #6b7280 !important;
+}
+
+@media (max-width: 768px) {
+  .tweet-container {
+    height: 240px;
+  }
+
+  .tweet-container > div {
+    transform: scale(0.75);
+    width: 133.33%;
+  }
+}
