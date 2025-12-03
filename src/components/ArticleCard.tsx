@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { useRouter } from "next/navigation";
 import { BookIcon, TimeIcon, ArrowUpRightIcon } from "@/src/components/Icons";
 
 interface Article {
@@ -20,11 +21,12 @@ interface ArticleCardProps {
 
 export default function ArticleCard({ article, index, isLast = false }: ArticleCardProps) {
   const articlePageUrl = `/articles/${article.slug}`;
+  const router = useRouter();
 
   return (
     <motion.div 
       className={`group flex flex-col sm:flex-row gap-4 sm:gap-6 py-5 sm:py-6 transition-all duration-300 cursor-pointer ${!isLast ? 'border-b border-gray-200 hover:border-gray-300' : ''}`}
-      onClick={() => window.open(articlePageUrl, "_self")}
+      onClick={() => router.push(articlePageUrl)}
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.3, delay: index * 0.1 }}
