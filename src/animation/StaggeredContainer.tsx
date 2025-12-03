@@ -1,5 +1,5 @@
-import React from "react";
-import { motion } from "framer-motion";
+import React, { useEffect, useState } from "react";
+import { motion, useReducedMotion } from "framer-motion";
 
 interface StaggeredContainerProps {
   children: React.ReactNode;
@@ -27,14 +27,17 @@ export const StaggeredContainer: React.FC<StaggeredContainerProps> = ({
   delay = 0,
   className = "",
 }) => {
+  const prefersReducedMotion = useReducedMotion();
+  const [hasAnimated, setHasAnimated] = useState(false);
+
   // Container variants for stagger effect
   const containerVariants = {
-    hidden: { opacity: 0 },
+    hidden: prefersReducedMotion ? { opacity: 1 } : { opacity: 0 },
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: staggerDelay,
-        delayChildren: delay,
+        staggerChildren: prefersReducedMotion ? 0 : staggerDelay,
+        delayChildren: prefersReducedMotion ? 0 : delay,
       },
     },
   };
@@ -297,15 +300,55 @@ export const StaggeredContainer: React.FC<StaggeredContainerProps> = ({
 
   const childVariants = getChildVariants();
 
+  // If reduced motion is preferred, simplify variants
+  const simplifiedChildVariants = prefersReducedMotion
+    ? {
+        hidden: { opacity: 1 },
+        visible: { opacity: 1 },
+      }
+    : childVariants;
+
+  // Use useEffect to ensure content becomes visible after a short delay as fallback
+  useEffect(() => {
+    // Immediate fallback for reduced motion
+    if (prefersReducedMotion) {
+      setHasAnimated(true);
+      return;
+    }
+
+    // Fallback: show content after 300ms if animation doesn't trigger
+    const timer = setTimeout(() => {
+      setHasAnimated(true);
+    }, 300);
+
+    return () => clearTimeout(timer);
+  }, [prefersReducedMotion]);
+
   return (
     <motion.div
       className={className}
       variants={containerVariants}
-      initial="hidden"
-      whileInView="visible"
+      initial={prefersReducedMotion ? "visible" : "hidden"}
+      animate={prefersReducedMotion || hasAnimated ? "visible" : undefined}
+      whileInView={prefersReducedMotion ? undefined : "visible"}
+      viewport={{ once: true, amount: 0.1, margin: "-50px" }}
+      onAnimationStart={() => setHasAnimated(true)}
+      style={{
+        // CSS fallback: ensure content is visible
+        opacity: prefersReducedMotion || hasAnimated ? 1 : undefined,
+      }}
     >
       {React.Children.map(children, (child, index) => (
-        <motion.div key={index} variants={childVariants}>
+        <motion.div
+          key={index}
+          variants={simplifiedChildVariants}
+          initial={prefersReducedMotion ? "visible" : "hidden"}
+          animate={prefersReducedMotion || hasAnimated ? "visible" : undefined}
+          style={{
+            // CSS fallback: ensure children are visible
+            opacity: prefersReducedMotion || hasAnimated ? 1 : undefined,
+          }}
+        >
           {child}
         </motion.div>
       ))}
