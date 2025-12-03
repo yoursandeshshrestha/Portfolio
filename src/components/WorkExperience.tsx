@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import {
   workExperience,
@@ -111,12 +112,12 @@ const WorkExperienceItem: React.FC<{
                 </div>
               ))}
             {!showAll && experience.achievements.length > 3 && (
-              <a
+              <Link
                 href="/experience"
                 className="text-blue-500 text-xs sm:text-sm hover:text-blue-600 transition-colors inline-block"
               >
                 See {experience.achievements.length - 3} more →
-              </a>
+              </Link>
             )}
           </div>
         )}
@@ -139,12 +140,12 @@ const WorkExperienceItem: React.FC<{
                   </div>
                 ))}
               {!showAll && experience.process.length > 3 && (
-                <a
+                <Link
                   href="/experience"
                   className="text-blue-500 text-xs sm:text-sm hover:text-blue-600 transition-colors inline-block"
                 >
                   See full process ({experience.process.length} steps) →
-                </a>
+                </Link>
               )}
             </div>
           </div>
@@ -175,12 +176,12 @@ const WorkExperience: React.FC<WorkExperienceProps> = ({
           <h2 className="text-2xl sm:text-3xl lg:text-[30px] font-medium text-[#070B28]">
             Work Experience
           </h2>
-          <a
+          <Link
             href="/experience"
             className="text-[#4479E2] font-medium text-sm sm:text-[16px] hover:underline"
           >
             See All
-          </a>
+          </Link>
         </div>
       )}
 

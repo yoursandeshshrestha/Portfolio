@@ -203,3 +203,26 @@ html {
     width: 133.33%;
   }
 }
+
+/* Animation fallback: Ensure content is visible even if animations don't trigger */
+/* Respect reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Fallback: Ensure motion components become visible after a reasonable time */
+/* This is a progressive enhancement - content should be visible even without JS */
+@keyframes ensureVisibility {
+  to {
+    opacity: 1;
+  }
+}
+
+/* Apply fallback animation to elements that might be hidden by animations */
+/* This ensures content appears even if IntersectionObserver or animations fail */

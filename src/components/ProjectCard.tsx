@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import { ArrowUpRightIcon, CalendarIcon, LockIcon } from "@/src/components/Icons";
 import React from "react";
@@ -35,6 +36,7 @@ const getDifficultyColor = (difficulty: string): string => {
 export default function ProjectCard({ project, index, showTags = true }: ProjectCardProps) {
   const [isHovered, setIsHovered] = useState(false);
   const [hoveredProject, setHoveredProject] = useState<number | null>(null);
+  const router = useRouter();
 
   const projectPageUrl = `/projects/${project.slug}`;
 
@@ -77,7 +79,7 @@ export default function ProjectCard({ project, index, showTags = true }: Project
           setIsHovered(false);
           setHoveredProject(null);
         }}
-        onClick={() => window.open(projectPageUrl, "_self")}
+        onClick={() => router.push(projectPageUrl)}
       >
         {isHovered && project.video ? (
           <video
@@ -160,7 +162,7 @@ export default function ProjectCard({ project, index, showTags = true }: Project
       {/* Title */}
       <motion.h3
         className="font-bold text-base sm:text-[18px] text-[#070B28] mb-2 hover:text-blue-600 transition-colors duration-200 cursor-pointer line-clamp-2"
-        onClick={() => window.open(projectPageUrl, "_self")}
+        onClick={() => router.push(projectPageUrl)}
         title={project.title}
       >
         {project.title}

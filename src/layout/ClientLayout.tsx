@@ -4,6 +4,7 @@ import { Header } from "@/src/layout/Header";
 import Sidebar from "@/src/layout/Sidebar";
 import Footer from "./Footer";
 import { BackgroundMusic } from "@/src/components/BackgroundMusic";
+import { MusicProvider } from "@/src/contexts/MusicContext";
 
 interface ClientLayoutProps {
   children: React.ReactNode;
@@ -35,7 +36,7 @@ export function ClientLayout({ children }: ClientLayoutProps) {
   }, [isSidebarOpen]);
 
   return (
-    <>
+    <MusicProvider>
       <Header isSidebarOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
       <div className="max-w-[1440px] mx-auto w-full relative flex flex-col lg:flex-row px-4 sm:px-6 lg:px-6 py-20 sm:py-24 lg:py-38">
         <Sidebar isOpen={isSidebarOpen} onClose={closeSidebar} />
@@ -45,6 +46,6 @@ export function ClientLayout({ children }: ClientLayoutProps) {
       </div>
       <Footer />
       <BackgroundMusic />
-    </>
+    </MusicProvider>
   );
 }

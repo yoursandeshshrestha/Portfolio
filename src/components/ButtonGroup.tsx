@@ -1,5 +1,6 @@
 import { ArrowUpRightIcon } from "@/src/components/Icons";
 import React, { useState } from "react";
+import Link from "next/link";
 import { motion } from "framer-motion";
 
 interface Button {
@@ -14,32 +15,67 @@ interface ButtonGroupProps {
 const ButtonGroup: React.FC<ButtonGroupProps> = ({ buttons }) => {
   const [hoveredButton, setHoveredButton] = useState<string | null>(null);
 
+  const isInternalLink = (href: string) => {
+    return href.startsWith("/") || href.startsWith("#");
+  };
+
   return (
     <div className="flex flex-col md:flex-row gap-3 sm:gap-6 mt-8 ">
-      {buttons.map((button) => (
-        <motion.a
-          key={button.label}
-          href={button.href}
-          className="text-[hsl(var(--muted-foreground))] text-nowrap font-medium py-2 rounded-md text-xs sm:text-[14px] flex items-center justify-center sm:justify-start transition-colors uppercase"
-          whileHover={{ scale: 1.02 }}
-          transition={{ duration: 0.2 }}
-          onHoverStart={() => setHoveredButton(button.label)}
-          onHoverEnd={() => setHoveredButton(null)}
-        >
-          {button.label}
-          <motion.div
-            initial={{ x: -5, opacity: 0 }}
-            animate={{
-              x: hoveredButton === button.label ? 0 : -5,
-              opacity: hoveredButton === button.label ? 1 : 0,
-              marginLeft: hoveredButton === button.label ? "12px" : "8px",
-            }}
+      {buttons.map((button) => {
+        const isInternal = isInternalLink(button.href);
+
+        const content = (
+          <>
+            {button.label}
+            <motion.div
+              initial={{ x: -5, opacity: 0 }}
+              animate={{
+                x: hoveredButton === button.label ? 0 : -5,
+                opacity: hoveredButton === button.label ? 1 : 0,
+                marginLeft: hoveredButton === button.label ? "12px" : "8px",
+              }}
+              transition={{ duration: 0.2 }}
+            >
+              <ArrowUpRightIcon className="w-3 h-3 sm:w-4 sm:h-4" variant="black" />
+            </motion.div>
+          </>
+        );
+
+        if (isInternal) {
+          return (
+            <motion.div
+              key={button.label}
+              whileHover={{ scale: 1.02 }}
+              transition={{ duration: 0.2 }}
+              onHoverStart={() => setHoveredButton(button.label)}
+              onHoverEnd={() => setHoveredButton(null)}
+            >
+              <Link
+                href={button.href}
+                className="text-[hsl(var(--muted-foreground))] text-nowrap font-medium py-2 rounded-md text-xs sm:text-[14px] flex items-center justify-center sm:justify-start transition-colors uppercase"
+              >
+                {content}
+              </Link>
+            </motion.div>
+          );
+        }
+
+        return (
+          <motion.a
+            key={button.label}
+            href={button.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-[hsl(var(--muted-foreground))] text-nowrap font-medium py-2 rounded-md text-xs sm:text-[14px] flex items-center justify-center sm:justify-start transition-colors uppercase"
+            whileHover={{ scale: 1.02 }}
             transition={{ duration: 0.2 }}
+            onHoverStart={() => setHoveredButton(button.label)}
+            onHoverEnd={() => setHoveredButton(null)}
           >
-            <ArrowUpRightIcon className="w-3 h-3 sm:w-4 sm:h-4" variant="black" />
-          </motion.div>
-        </motion.a>
-      ))}
+            {content}
+          </motion.a>
+        );
+      })}
     </div>
   );
 };
