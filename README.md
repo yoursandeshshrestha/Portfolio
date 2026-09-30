@@ -2,7 +2,7 @@
 
 Software Development Engineer with expertise in full-stack development and team leadership. Currently leading a team of 10 engineers at Fordel Studio, architecting and implementing scalable solutions with a focus on clean code principles and system design.
 
-## Professional Experience
+## Professional Experience 
 
 **Software Development Engineer** | [Fordel Studio](https://fordelstudios.com)
 
@@ -64,3 +64,6 @@ Software Development Engineer with expertise in full-stack development and team 
 ---
 
 _Available for technical consultations and collaborative projects in full-stack development and system architecture._
+
+
+#v3
