@@ -162,10 +162,7 @@ class AudioManager {
 const audioManager = new AudioManager();
 
 export function MusicProvider({ children }: { children: ReactNode }) {
-  const [isPlaying, setIsPlaying] = useState(() => {
-    if (typeof window === "undefined") return false;
-    return audioManager.getPlayingState();
-  });
+  const [isPlaying, setIsPlaying] = useState(false);
 
   const pathname = usePathname();
   const prevPathnameRef = useRef(pathname);
